@@ -1,6 +1,6 @@
 import uniqid from 'uniqid';
 import { motion } from 'framer-motion';
-import categories from './data';
+import { useMemo } from 'react';
 
 const container = {
   hidden: {},
@@ -17,6 +17,23 @@ const projectVariant = {
 };
 
 function Categories() {
+  const categories = useMemo(
+    () => [
+      {
+        img: '/assets/images/coats.jpg',
+        title: 'COATS',
+      },
+      {
+        img: '/assets/images/dress.jpg',
+        title: 'DRESSES',
+      },
+      {
+        img: '/assets/images/shirt.jpg',
+        title: 'SHIRTS',
+      },
+    ],
+    []
+  );
   return (
     <motion.div
       variants={container}

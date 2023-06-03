@@ -49,40 +49,40 @@ function Hero() {
         </motion.div>
         <div className=" relative  sm:py-12  py-0">
           <img
-            src="../src/assets/pattern blue.svg"
+            src="/assets/pattern blue.svg"
             alt="square"
             className="absolute top-0 -left-16 hidden sm:block"
           />
           <picture>
             <source
               media="(min-width: 1024px)"
-              srcSet="../src/assets/images/1x.jpg 420w ,
-                   ../src/assets/images/2x.jpg 840w ,
-                    ../src/assets/images/2x.jpg 1260w   "
+              srcSet="/assets/images/1x.jpg 420w ,
+                   /assets/images/2x.jpg 840w ,
+                  /assets/images/3x.jpg 1260w   "
               sizes="30vw"
             />
 
             <source
               media="(min-width: 640px)"
-              srcSet="../src/assets/images/phone-1x.jpg 390w ,
-                   ../src/assets/images/phone-2x.jpg 780w "
+              srcSet="/assets/images/phone-1x.jpg 390w ,
+                   /assets/images/phone-2x.jpg 780w "
               sizes="50vw"
             />
             <source
               media="(min-width: 200px)"
-              srcSet="../src/assets/images/phone-1x.jpg 390w ,
-                   ../src/assets/images/phone-2x.jpg 780w "
+              srcSet="/assets/images/phone-1x.jpg 390w ,
+                   /assets/images/phone-2x.jpg 780w "
               sizes="100vw"
             />
             <img
-              src="../src/assets/images/phone-1x.jpg"
+              src="/assets/images/phone-1x.jpg"
               alt="hero"
               className="h-auto max-w-full"
             />
           </picture>
 
           <img
-            src="../src/assets/pattern blue.svg"
+            src="/assets/pattern blue.svg"
             alt="square"
             className="absolute bottom-0 -right-16  hidden sm:block"
           />

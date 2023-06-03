@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://ecommerce-api-zqnf.onrender.com';
+const BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL;
 
 const puplicRequest = axios.create({
   baseURL: BASE_URL,

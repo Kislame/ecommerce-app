@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { setCredentials, logOut } from '../../redux/auth/authSlice';
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://ecommerce-api-zqnf.onrender.com',
+  baseUrl: import.meta.env.VITE_REACT_APP_BASE_URL,
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const { accessToken } = getState().auth;

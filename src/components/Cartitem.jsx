@@ -1,4 +1,3 @@
-import CheckIcon from '@mui/icons-material/Check';
 import { useDispatch } from 'react-redux';
 import { productRemoved } from '../redux/cart/cartRedux';
 
@@ -45,7 +44,21 @@ function Cartitem({ title, price, img, quantity, id }) {
         </div>
         <div className="flex justify-between items-center">
           <div>
-            <CheckIcon sx={{ color: 'green' }} />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6 stroke-emerald-500"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+              />
+            </svg>
+
             <span className="ml-2 text-slate-800">in stock</span>
           </div>
           <button
