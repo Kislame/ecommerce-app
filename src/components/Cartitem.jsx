@@ -1,10 +1,16 @@
 import { useDispatch } from 'react-redux';
-import { productRemoved } from '../redux/cart/cartRedux';
+import { productRemoved, productUpdated } from '../features/cart/cartRedux';
 
 function Cartitem({ title, price, img, quantity, id }) {
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     dispatch(productRemoved({ id }));
+  };
+  const handleAdd = (quantity, id) => {
+    dispatch(productUpdated({ id, newQuantity: quantity + 1 }));
+  };
+  const handleMinus = (quantity, id) => {
+    dispatch(productUpdated({ id, newQuantity: quantity - 1 }));
   };
   return (
     <div className="max-w-lg flex  lg:flex-row drop-shadow-md  flex-col border rounded-lg lg:w-[500px]  lg:h-60  w-72 h-fit ">
@@ -25,6 +31,7 @@ function Cartitem({ title, price, img, quantity, id }) {
             </span>
             <div className="flex gap-2 ">
               <button
+                onClick={() => handleMinus(quantity, id)}
                 type="button"
                 className="font-semibold text-xl text-slate-700"
               >
@@ -34,6 +41,7 @@ function Cartitem({ title, price, img, quantity, id }) {
                 {quantity}
               </span>
               <button
+                onClick={() => handleAdd(quantity, id)}
                 type="button"
                 className="font-semibold text-xl text-slate-700"
               >

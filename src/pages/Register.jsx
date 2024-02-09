@@ -1,15 +1,14 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import { useForm } from 'react-hook-form';
-import { useState, useRef } from 'react';
+import { useState, useRef, useTransition } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useRegisterUserMutation } from '../redux/auth/authApiSlice';
+import { useRegisterUserMutation } from '../features/auth/authApiSlice';
 
 function Register() {
   const [registerUser] = useRegisterUserMutation();
   const navigate = useNavigate();
-  const [success, setSuccess] = useState(false);
-  const [errMsg, setErrMsg] = useState('');
 
+  const [errMsg, setErrMsg] = useState('');
   const errRef = useRef();
 
   const {

@@ -11,9 +11,9 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { apiSlice } from './api/apiSlice';
-import authReducer from '../redux/auth/authSlice';
-import cartReducer from '../redux/cart/cartRedux';
-import productReducer from '../redux/products/productsSlice';
+import authReducer from '../features/auth/authSlice';
+import cartReducer from '../features/cart/cartRedux';
+import productReducer from '../features/products/productsSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -26,7 +26,7 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['cart'],
+  whitelist: [''],
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
@@ -38,7 +38,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(apiSlice.middleware),
-  devTools: false,
+  devTools: import.meta.env.MODE !== 'production',
 });
 
 export const persistor = persistStore(store);

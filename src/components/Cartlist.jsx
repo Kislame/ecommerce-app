@@ -1,7 +1,7 @@
 import uniqid from 'uniqid';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { useUserCheckoutMutation } from '../redux/auth/authApiSlice';
+import { useUserCheckoutMutation } from '../features/auth/authApiSlice';
 
 import Cartitem from './Cartitem';
 

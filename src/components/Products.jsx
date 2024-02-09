@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import uniqid from 'uniqid';
 import { useState, useEffect } from 'react';
-import { useGetProductsQuery } from '../redux/products/productsApiSlice';
+import { useGetProductsQuery } from '../features/products/productsApiSlice';
 
 function Products({ filters, category, sort }) {
   const {

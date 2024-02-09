@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { setCredentials } from '../redux/auth/authSlice';
-import { useLoginMutation } from '../redux/auth/authApiSlice';
+import { setCredentials } from '../features/auth/authSlice';
+import { useLoginMutation } from '../features/auth/authApiSlice';
 
 function Login() {
   const errRef = useRef();
@@ -123,14 +123,14 @@ function Login() {
             Sign In
           </button>
         </form>
-        <a href="help" className="text-sky-500 mb-2 hover:text-brand">
+        <p className="text-sky-500 cursor-pointer mb-2 hover:text-brand">
           Forget password?
-        </a>
+        </p>
         <p className="text-brand">
           Don't have an account ?{' '}
-          <a href="register" className="text-sky-500 hover:text-brand ">
+          <Link to="/register" className="text-sky-500 hover:text-brand ">
             Sign up
-          </a>
+          </Link>
         </p>
         <p
           ref={errRef}

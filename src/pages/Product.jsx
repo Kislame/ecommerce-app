@@ -2,8 +2,8 @@ import { useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import uniqid from 'uniqid';
-import { selectProductById } from '../redux/products/productsSlice';
-import { productAdded } from '../redux/cart/cartRedux';
+import { selectProductById } from '../features/products/productsSlice';
+import { productAdded } from '../features/cart/cartRedux';
 
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';

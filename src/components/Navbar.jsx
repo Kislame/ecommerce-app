@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Link, useNavigate } from 'react-router-dom';
-import { useLogoutMutation } from '../redux/auth/authApiSlice';
-import { logOut } from '../redux/auth/authSlice';
+import { useLogoutMutation } from '../features/auth/authApiSlice';
+import { logOut } from '../features/auth/authSlice';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -24,6 +24,7 @@ function Navbar() {
         <img src="/assets/LOGO.svg" alt="logo" />
       </div>
       <nav
+        role="navigation"
         className={`
             flex items-center lg:order-2 order-1 
               
@@ -48,7 +49,7 @@ function Navbar() {
               <img src="/assets/white-close.svg" alt="close menu" />
             </button>
           </li>
-          <li className="my-10 lg:my-0 lg:py-0 lg:border-none hover:border-y-2 border-slate-50 text-center py-5 ">
+          <li className=" cursor-pointer my-10 lg:my-0 lg:py-0 lg:border-none hover:bg-sky-500/50 transition-all duration-500 ease-in-out border-slate-50 text-center py-5 ">
             <Link
               className="font-open font-semibold lg:text-lg text-2xl  tracking-widest lg:tracking-normal lg:text-brand  text-white"
               to="/"
@@ -57,7 +58,7 @@ function Navbar() {
             </Link>
           </li>
 
-          <li className="my-7 lg:my-0 lg:py-0 hover:border-y-2 border-slate-50 text-center py-5">
+          <li className="hover:bg-sky-500/50 transition-all duration-500 ease-in-out cursor-pointer my-7 lg:my-0 lg:py-0  border-slate-50 text-center py-5">
             <Link
               className="font-open font-semibold lg:text-lg text-2xl tracking-widest lg:tracking-norma lg:text-brand text-white"
               to="/products"
